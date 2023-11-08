@@ -1,0 +1,9 @@
+
+CREATE TABLE cars
+(
+    ID serial,
+    NAME varchar(100) NOT NULL,
+    PRICE INTEGER NOT NULL,
+    HORSEPOWER INTEGER NOT NULL,
+    PRIMARY KEY (ID)
+);
