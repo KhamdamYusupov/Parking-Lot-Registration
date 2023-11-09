@@ -9,12 +9,14 @@ public class Main {
         welcome();
         System.out.println("If you want to quit, please enter 'Q': ");
         response = scanner.nextLine();
-        if(response.equalsIgnoreCase("q"))
-        welcome();
+        if (response.equalsIgnoreCase("q")) {
+            System.out.println("Thank you for using our service!!!");
+        } else {
+            welcome();
+        }
     }
 
     private static void welcome() {
-
         System.out.println("* * * WELCOME TO DAILY PARK SPOT!!! * * * \n If you want to register new car, " + "please enter 'Y' or \n you want to see registered car's list enter 'L':");
         response = scanner.nextLine();
         if (response.equalsIgnoreCase("y")) {

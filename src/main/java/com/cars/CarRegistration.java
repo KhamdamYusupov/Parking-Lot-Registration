@@ -1,17 +1,15 @@
 package com.cars;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.util.Scanner;
 
 @Data
 public class CarRegistration {
     private Car car;
 
+
     Scanner scanner = new Scanner(System.in);
+
     public Car registerCar() {
         System.out.println("***CAR REGISTRATION FORM***");
         System.out.println("Enter the car model:");
@@ -25,6 +23,6 @@ public class CarRegistration {
                 .price(price)
                 .horsePower(horsePower)
                 .build();
-
-    re}
+        return car;
+    }
 }

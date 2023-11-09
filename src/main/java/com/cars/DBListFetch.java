@@ -4,13 +4,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JdbcExample {
-    public static void main(String[] args) {
-        System.out.println("PostgreSQl JDBC connecting ..... ha-ha");
+public class DBListFetch {
 
-        List<Car> carList = new ArrayList<>();
-        String SQL_QUERY = "SELECT * FROM cars";
-
+    static List<Car> carList = new ArrayList<>();
+    static String SQL_QUERY = "SELECT * FROM cars";
+    public void printListOfCars() {
         try(Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/cars", "postgres", "Pshtqapipi0209");
             PreparedStatement preparedStatement = connection.prepareStatement(SQL_QUERY)) {
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -29,6 +27,7 @@ public class JdbcExample {
 
                 carList.add(obj);
             }
+            System.out.println("Here is the list of registered cars: ");
             carList.forEach(System.out::println);
 
         } catch (SQLException e) {
